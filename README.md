@@ -17,3 +17,4 @@ Templates folder -
   review.html - redirects from book.html if user wants to add a review. Allows the user to write and rate out of 5
   u.html - a YOU/U page for showing user stats such as account age, last login and books reviewed
   
+FUTURE PLANS - allow users to edit their reviews. Allow users to directly go to their reviews from the 'u' page and also allow  users to view each others profiles.
