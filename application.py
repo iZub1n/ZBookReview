@@ -45,6 +45,7 @@ def login():
                 if (username or password) is None:
                     return render_template("error.html", message="Login or Password is empty")
 
+                return render_template("error.html", message=u.password)
                 if u is None or (u.password)!=password:
                     return render_template("error.html", message="Username or Password is incorrect")
 
