@@ -1,3 +1,2 @@
-from venv import create_app
-
-app = create_app()
+from application import app
+app.run
