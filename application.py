@@ -39,12 +39,13 @@ def login():
             if request.form['action']=='Lgn':
                 username = request.form.get("uname")
                 password = request.form.get("pswd")
-
+                
+                u = db.execute("SELECT * FROM account WHERE username = :usernameNew" , {"usernameNew": usernameNew}).fetchone()
+                
                 if (username or password) is None:
                     return render_template("error.html", message="Login or Password is empty")
 
-                u = db.execute("SELECT password FROM account WHERE username = :username" , {"username": username}).fetchone()
-                if (u.password)!=password:
+                if u is None or (u.password)!=password:
                     return render_template("error.html", message="Username or Password is incorrect")
 
                 timeStamp = (datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
