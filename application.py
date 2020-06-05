@@ -40,12 +40,11 @@ def login():
                 username = request.form.get("uname")
                 password = request.form.get("pswd")
                 
-                u = db.execute("SELECT * FROM account WHERE username = :usernameNew" , {"usernameNew": usernameNew}).fetchone()
+                u = db.execute("SELECT * FROM account WHERE username = :username" , {"username": username}).fetchone()
                 
                 if (username or password) is None:
                     return render_template("error.html", message="Login or Password is empty")
 
-                return render_template("error.html", message=u.password)
                 if u is None or (u.password)!=password:
                     return render_template("error.html", message="Username or Password is incorrect")
 
