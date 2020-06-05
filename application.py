@@ -196,3 +196,6 @@ def api_call(book_isbn):
 def gReads(book_isbn):
     gReadsvar = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "2V41nUoJ1R4abmzct4A", "isbns": book_isbn})
     return gReadsvar.json()
+
+if __name__ == "__main__":
+    app.run
