@@ -118,7 +118,7 @@ def searchResults():
                         {"query": search_query})
 
     if rows.rowcount == 0:
-        return render_template("error.html", message=search_query)
+        return render_template("error.html", message="Book Not Found")
 
     space=""
     if rows.rowcount>100:
