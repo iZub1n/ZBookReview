@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome - Z's Book Reviews
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+<div class="row">
+    <div class="col-12" style="text-align:center; padding-top: 35px; padding-bottom: 15px;">
+            <h1>Zearch!</h1>
+    </div>
+   </div> 
+</div>
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-1">
+        <img src="/static/search--v2.png" class="img-responsive"></img>
+    </div>
+    <div class="col-10" style="text-align:center; padding-top: 15px;">
+        <div class="active-purple-4 mb-4">
+            <form action="{{ url_for('searchResults') }}" class="form-signin" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="searchQuery">
+                </div>
+                <label style="padding-top: 20px;">
+                    <button type="submit" class="btn btn-primary" name="action" value="srch">Search</button>
+                </label>
+            </form>
+          </div>
+    </div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-8">
+        <img src="/static/books.png" class="img-responsive"></img>
+    </div>
+</div>
+</div>
+{% endblock %}
